@@ -133,9 +133,9 @@ vlan 10
 vlan 50
    name IPCameraVLAN
 vlan 69
-   name vlanNIrobert
+   name vlanNETFLIX
 vlan 70
-    name EXTRAVLAN
+    name GIPIT
 vlan 71
     name HRD-POLICY
 vlan 100
@@ -172,10 +172,10 @@ config t
 ip routing
 ip dhcp pool CAMERA6
 host 10.22.50.6 255.255.255.0
-client-identifier 001a.xxxx.yyyy
+client-identifier 001a.0704.7f6a
 ip dhcp pool CAMERA8
 host 10.22.50.8 255.255.255.0
-client-identifier 001a.xxxx.yyyy 
+client-identifier 001a.0709.c238 
 end
 show ip dhcp binding
 
@@ -232,7 +232,7 @@ telephony-service
 ephone-dn 1
   number 2211
 ephone-dn 2
-  number 22
+  number 2222
 ephone-dn 3
   number 2233
 ephone-dn 4
@@ -246,18 +246,18 @@ ephone-dn 7
 ephone-dn 8
   number 2288
  ephone-dn 9
-   number 2299
+   number 2267
 ephone-dn 10
- number 2298
+ number 2223
 Ephone 1
-  Mac-address cafe.face.baba
+  Mac-address ccd8.c1fb.09ff
   type 8945
-  button 1:8 2:7 3:6 4:5
+  button 1:8 2:7 3:6 4:9
   restart
 Ephone 2
-  Mac-address fafa.caca.baba
+  Mac-address ccd8.c1fb.0817
   type 8945
-  button 1:4 2:3 3:2 4:1
+  button 1:4 2:3 3:2 4:10
   restart  
 end
 
@@ -288,17 +288,17 @@ configure terminal
  destination-pattern 11..
  session target ipv4:10.11.100.8
  codec g711ULAW
-  !dial-peer voice 12 Voip
-  !destination-pattern 12..
-  !session target ipv4:10.12.100.8
-  !codec g711ULAW
+  dial-peer voice 12 Voip
+  destination-pattern 12..
+  session target ipv4:10.12.100.8
+  codec g711ULAW
 dial-peer voice 21 Voip
  destination-pattern 21..
  session target ipv4:10.21.100.8
  codec g711ULAW
-dial-peer voice  Voip
+dial-peer voice 21 Voip
  destination-pattern ..
- session target ipv4:10..100.8
+ session target ipv4:10.21.100.8
  codec g711ULAW
 dial-peer voice 31 Voip
  destination-pattern 31..
