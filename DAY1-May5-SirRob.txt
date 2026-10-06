@@ -292,10 +292,10 @@ configure terminal
   destination-pattern 12..
   session target ipv4:10.12.100.8
   codec g711ULAW
-dial-peer voice 21 Voip
- destination-pattern 21..
- session target ipv4:10.21.100.8
- codec g711ULAW
+!dial-peer voice 21 Voip
+ !destination-pattern 21..
+ !session target ipv4:10.21.100.8
+ !codec g711ULAW
 dial-peer voice 21 Voip
  destination-pattern ..
  session target ipv4:10.21.100.8
@@ -413,11 +413,8 @@ int gi 0/1
 end
 
 @CUCM:
-config t
-router ospf 1
-router-id 10.22.100.8
-network 10.22.100.0  0.0.0.255  area 0
-end
+
+
 
 EXAM READY DAY1: NAT, NTP, DHCP, and SSH
 NAT: NETWORK ADDRESS TRANSLATION: BIGAY INTERNET SA MUNDO NI CISCO.
